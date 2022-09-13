@@ -19,6 +19,7 @@
   font-size: 62.5%; /* 1rem = 10px */
   --ff-heading: 'Staatliches', cursive;
   --ff-text: 'Palanquin', sans-serif;
+  --ff-footer: 'Open Sans', sans-serif;
 }
 
 * {
@@ -35,13 +36,19 @@ body {
   background-color: var(--background);
 }
 
-body::before {
-  content: "";
-  display: block;
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
   width: 100%;
-  min-height: 24rem;
-  background-color: var(--primary-l);
-  padding: 2rem 0;
+  background-color: var(--primary);
+  min-height: 27.9rem;
 }
 
 header {
@@ -49,8 +56,7 @@ header {
   flex-direction: column;
   align-items: center;
 
-  position: absolute;
-  top: 3.2rem;
+  padding: 3.2rem 0;
   width: 100%;
 
   animation: showup 2s;
@@ -77,6 +83,7 @@ header h1 {
   width: 100%;
   text-align: center;
   padding: 0.8rem;
+  margin-bottom: 2.9rem;
   
   font-size: 4rem;
   
@@ -87,31 +94,32 @@ header h1 {
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-main p {
+header p {
   font-size: 2rem;
   line-height: 1.5;
   text-align: center;
   color: var(--text);
   width: 100%;
   max-width: 30.5rem;
-  margin: 1.4rem auto 0;
+  margin: 4.3rem auto 0;
   font-family: var(--ff-text);
 }
 
 .cards {
-  margin-top: 6.3rem;
-
   display: grid;
   gap: 3.2rem;
+  margin-top: 6.3rem;
 }
 
 .card {
   overflow: hidden;
-  border-radius: 2rem;
-
   position: relative;
 
   animation: topdown 0.5s;
+}
+
+.card img {
+  border-radius: 2rem;
 }
 
 .card span {
@@ -135,6 +143,73 @@ main p {
   color: var(--primary);
 
   animation: bottomup 2s;
+}
+
+#footer {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+
+  .page {
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: row;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  header::before {
+    width: auto;
+  }
+
+  header {
+    width: fit-content;
+    background-color: var(--primary);
+  }
+
+  header p {
+    color: var(--white);
+    padding: 0 0.5rem;
+  }
+  
+  .card:nth-of-type(1) {
+    grid-area: A;
+  }
+
+  .card:nth-of-type(2) {
+    grid-area: B;
+  }
+
+  .card:nth-of-type(3) {
+    grid-area: C;
+  }
+
+  .card:nth-of-type(4) {
+    grid-area: D;
+  }
+
+
+  #footer {
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.8;
+    grid-area: footer;
+    color: var(--primary);
+    font-family: var(--ff-footer);
+  }
+
+  .cards {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 150px 350px 150px, auto auto auto, 150px 350px 150px;
+    grid-template-areas: "A B C" ". D ." ". footer .";
+  }
+
 }
 
 @keyframes showup {
