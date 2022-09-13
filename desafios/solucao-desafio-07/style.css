@@ -114,12 +114,9 @@ header p {
 .card {
   overflow: hidden;
   position: relative;
+  border-radius: 2rem;
 
   animation: topdown 0.5s;
-}
-
-.card img {
-  border-radius: 2rem;
 }
 
 .card span {
@@ -174,23 +171,47 @@ header p {
     color: var(--white);
     padding: 0 0.5rem;
   }
-  
-  .card:nth-of-type(1) {
+
+  .card {
+    border-radius: 10px;
+    align-self: start;
+  }
+
+  .card img {
+    object-fit: cover;
+    object-position: center;
+  }
+ 
+  .cards>div:nth-of-type(1) {
+    max-height: 15rem;
     grid-area: A;
   }
 
-  .card:nth-of-type(2) {
+  .cards>div:nth-of-type(2) {
+    max-height: 35rem;
     grid-area: B;
   }
 
-  .card:nth-of-type(3) {
+  .cards>div:nth-of-type(3) {
+    max-height: 15rem;
     grid-area: C;
   }
 
-  .card:nth-of-type(4) {
+  .cards>div:nth-of-type(4) {
+    max-height: 35rem;
     grid-area: D;
   }
 
+  .cards>div:nth-of-type(5) {
+    max-height: 15rem;
+    grid-area: E;
+    align-self: center;
+  }
+
+  .cards>div:nth-of-type(6) {
+    max-height: 35rem;
+    grid-area: F;
+  }
 
   #footer {
     display: block;
@@ -203,11 +224,10 @@ header p {
   }
 
   .cards {
+    grid-template-rows: 15rem 35rem 15rem 35rem 15rem 35rem;
+    grid-auto-rows: minmax(15rem, 35rem);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 150px 350px 150px, auto auto auto, 150px 350px 150px;
-    grid-template-areas: "A B C" ". D ." ". footer .";
+    grid-template-areas: "A B C""D E F""D E F" ". footer .";
   }
 
 }
