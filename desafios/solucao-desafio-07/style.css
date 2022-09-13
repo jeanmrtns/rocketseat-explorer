@@ -1,0 +1,170 @@
+:root {
+  --primary: #4A4E69;
+  --primary-l: #8E9AAF;
+  
+  --secondary: #CBC0D3;
+  --secondary-l: #FEEAFA;
+
+  --background: #EFF1FF;
+
+  --text: #23053A;
+  --white: #FFFFFF;
+
+  --fs-title: 4rem;
+  --fs-text: 2rem;
+
+  --lh-text: 1.5rem;
+  --lh-card-title: 3.4rem;
+
+  font-size: 62.5%; /* 1rem = 10px */
+  --ff-heading: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--background);
+}
+
+body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  min-height: 24rem;
+  background-color: var(--primary-l);
+  padding: 2rem 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 3.2rem;
+  width: 100%;
+
+  animation: showup 2s;
+}
+
+header img {
+  width: 13.7rem;
+  height: auto;
+  margin-bottom: 3.2rem;
+}
+
+main {
+  padding: 3.2rem;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+header h1 {
+  background-color: var(--secondary);
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  
+  font-size: 4rem;
+  
+  font-family: var(--ff-heading);
+  color: var(--white);
+  letter-spacing: 0.5rem;
+  font-weight: normal;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main p {
+  font-size: 2rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--text);
+  width: 100%;
+  max-width: 30.5rem;
+  margin: 1.4rem auto 0;
+  font-family: var(--ff-text);
+}
+
+.cards {
+  margin-top: 6.3rem;
+
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 2rem;
+
+  position: relative;
+
+  animation: topdown 0.5s;
+}
+
+.card span {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  font-size: 2rem;
+  line-height: 3.4;
+  border-radius: 2rem;
+  
+  min-width: 11.2rem;
+  height: 3.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--secondary-l);
+  font-family: var(--ff-heading);
+  color: var(--primary);
+
+  animation: bottomup 2s;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes topdown {
+  0% {
+    transform: translateY(-1.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bottomup {
+  0% {
+    transform: translateY(3.5rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
