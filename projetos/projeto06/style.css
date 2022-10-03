@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  font-family: 'DM Sans', sans-serif;
+*/
+
+:root {
+  font-size: 62.5%;
+}
+
+body, button, input, textarea {
+  font-size: 1.6rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(287.56deg, #C2E9FB 0%, #A1C4FD 100%);
+
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+main {
+  width: 42.8rem;
+  margin-top: -10rem;
+  background-color: white;
+  padding: 4.8rem 6.4rem 6.4rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  background: #7879F1;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.4rem;
+
+  transition: filter 0.2s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* game */
+
+h1 {
+  margin-bottom: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+form {
+  margin-top: 4.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+button, input {
+  border: none;
+  padding: 1.6rem;
+}
+
+input {
+  width: 6.5rem;
+  background: #DCE2E9;
+  border-radius: 0.4rem 0px 0px 0.4rem;
+}
+
+.game button {
+  border-radius: 0px 0.4rem 0.4rem 0px;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
+
+.finish h2 {
+  font-weight: normal;
+  margin-bottom: 3.3rem;
+  color: #34355B;
+}
